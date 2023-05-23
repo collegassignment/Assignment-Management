@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Contact{% endblock %}
+{% block content %}
+
+<div class="row" id="backg2">
+    <div class="col-md-12">
+        <h1 class="text-danger text-center  display-2 " id="contacttxt">CONTACT US</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-10 offset-1">
+        <div class="row" id="contactform" >
+            <div class="col-md-6 bg-dark">
+                <h1 class="fw-bold text-light p-5 display-3">Get In Touch</h1>
+                    <form class="pt-1 ps-5" action="/insertcontact/" method="post">
+                        {% csrf_token %}
+                        <input type="text" class="form-control-lg"  id="contact" name="name" placeholder="Enter your  name" pattern="[A-Za-z]*"   required/>
+                        <input type="email" class="form-control-lg"  id="contact1"  name="email" placeholder="Enter Your Valid Email Address" required/>
+                        <input type="tel" class="form-control-lg"  id="contact1"  name="phone" placeholder="Enter Your Mobile number" maxlength="10" pattern="[6|7|8|9][0-9]{9}" required/>
+                        <textarea name="message" placeholder=" Send Your Message"  name="message" maxlength="100" class="form-control-lg"  rows="4" cols="4" id="contact2"></textarea> 
+                        <div id="btns">
+                            <button type="submit" class="btn btn-danger btn-lg" onclick="btn()" >Submit<button>  
+                        </div>
+                    </form>
+            </div>
+            <div class="col-md-6 bg-light p-5">
+                <div class="row">
+                    <div class="col-md-5 pt-5" id="contact3">
+                        <h2 class="text-dark fs-2">Address</h2>
+                        <p class="text-secondary fs-5">Bathinda,Punjab</p>
+                        <h2 class="text-dark pt-3 fs-2">Call Us </h2>
+                        <p class="text-secondary fs-5">+916208678234</p>
+                        <h2 class="text-dark pt-3 fs-2">Mail Us </h2>
+                        <p class="text-secondary fs-5  "><a href="https://mail.google.com/mail/?view=cm&fs=1&to=educat085@gmail.com" target="_blank" class=" text-secondary nav-link" id="edu">educat085@gmail.com</a></p> 
+                    </div>
+                    <div class="col-md-7 pt-5" id="map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110335.60484552251!2d74.88864593572828!3d30.208899890664217!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39173297173abbcd%3A0xa00033c0a58a5ac8!2sBathinda%2C%20Punjab!5e0!3m2!1sen!2sin!4v1676619290383!5m2!1sen!2sin" width="150%" height="550px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>           
+<script>
+    function btn()
+    {
+        alert("Thank you for contact us");
+    }
+</script>
+
+{% endblock %}

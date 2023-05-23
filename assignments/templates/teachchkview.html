@@ -1,0 +1,76 @@
+{% extends 'base2.html' %}
+{% load static %}
+{% block title %}teachchkview{% endblock %}
+{% block content %}
+<div class="row" id="dashbg">
+    <div class="col-md-12">
+        <div class="row" id="assign">
+            <div class="col-md-10">
+            <h2>Update Assignment</h2>
+            <hr width="120%" >
+            </div>
+        </div>
+        <div class="row pt-5 ps-5">
+            <div class="col-md-12">
+                <table class="table table-light " style="width:100%">
+                    <thead>
+                    
+                    </thead>
+                    <tbody>
+                <tr class="table-active">
+                    <th scope="row">1</th>
+                    <td colspan="2" class="table-active">Assignment Number:{{u.Assignment_id.Assignment_Number}}</td>
+                    <td>Marks:{{u.Assignment_id.Assignment_Marks}}</td>
+                </tr>
+                <tr>
+                    <td colspan="4" class="text-center ps-5 text-danger fw-bold">Submitted By {{ u.Student_id.First_name}} {{ u.Student_id.Last_name}}</td>
+                </tr>
+                 <tr class="table-active">
+                    <th>Course</th>
+                    <td>{{u.Assignment_id.Course_id}}</td>
+                    <th>Subject Name</th>
+                    <td>{{u.Assignment_id.Subject_id}}</td>
+                </tr>
+                <tr>
+                    <th>Subject Code</th>
+                    <td>{{u.Assignment_id.Subject_id.Subjectcode}}</td>
+                    <th>Assignment Title</th>
+                    <td>{{u.Assignment_id.Assignment_Title}}</td>
+                </tr>
+                <tr class="table-active">
+                    <th>Asignment Description</th>
+                    <td>{{u.Assignment_id.Assignment_Description}}</td>
+                    <th>last Date of Submission</th>
+                    <td>{{u.Assignment_id.Submission_Date}}</td>
+                </tr>
+                <tr>
+                    <th>View assignment paper</th>
+                    <td colspan="3"><a href="/media/{{ u.Assignment_id.Assignment_File }}" target="_blank">View Assignment Paper</a></td>
+                </tr>
+                <tr class="table-active">
+                    <td colspan="4" class="text-center ps-5 text-danger fw-bold">Submitted Assignment Details</td>
+                </tr>
+                <tr>
+                    <th>Assignment Description</th>
+                    <td>{{u.Assignment_Description}}</td>
+                    <th>Submission Date</th>
+                    <td>{{ u.Submission_Date }}</td>
+                </tr>
+                <tr class="table-active">
+                    <th >View Submitted assignment paper</th>
+                    <td colspan="3"><a href="/media/{{ u.Assignment_File }}" target="_blank">View Answer Paper</a></td>
+                </tr>
+                <tr>
+                    <th>Remarks</th>
+                    <td>{{u.Remarks}}</td>
+                    <th>Marks</th>
+                    <td>{{u.Marks}}</td>   
+                </tr>
+        
+                </tbody>
+            </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

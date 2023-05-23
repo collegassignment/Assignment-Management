@@ -1,0 +1,234 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home{% endblock %}
+{% block content %}
+
+
+<div class="row" id="bg">
+    <div class="col-md-12">
+        <div class="row  pb-5" id="text">
+            <div class="col-md-12">
+                <h1 class="element display-3 text-light"></h1>
+                <div class="ps-5">
+                    <a href="/contact/">
+                        <button class="btn btn-danger text-light fs-4  display-2">contact us</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--about section start-->
+<div class="row" id="aboutus">
+    <div class="col-md-10 offset-1">
+        <div class="row pt-5"> 
+            <div class="col-md-7">
+                <h1 class="display-4 fw-bold"><span class="text-danger">What We</span> Offer</h1>
+                <p class="text-secondary fs-5">This  college give you training so students can accept challenges  posted by the industry and also improve the decision making and communication skills.</p>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row pt-5">
+                            <div class="col-md-2">
+                                <i class="fa-solid fa-lock fa-3x p-4 text-light rounded-circle bg-danger"></i>
+                            </div>
+                            <div class="col-md-4">
+                                <h3 >Safety First</h3>
+                                <p class=" fs-5 text-secondary">In our college we take care of all students safety at 24*7 hours> using CCTV surveillance</p>
+                            </div>
+                        <div class="col-md-2">
+                            <i class="fa-sharp fa-solid fa-person-chalkboard fa-3x p-4 text-light rounded-circle bg-danger" ></i>  
+                        </div>
+                        <div class="col-md-4">
+                            <h3 >Certified Teachers</h3>
+                                            <p class="fs-5 text-secondary ">All teachers in college are certified which gives you right direction to reach the goal</p>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <i class="fa-solid fa-chalkboard-user fa-3x p-4 text-light rounded-circle bg-danger"></i>                                   
+                                        </div>
+                                        <div class="col-md-4"> 
+                                            <h3 class=" ">Sufficient Classrooms</h3>
+                                            <p class="fs-5  text-secondary">In our college there are more classroms available with better environment</p>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <i class="fa-solid fa-book-open-reader fa-3x p-4 text-light rounded-circle bg-danger " ></i>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <h3>Regular Classes</h3>
+                                            <p class=" fs-5 text-secondary">In our college All teachers take the regular classes and help to develop students skills</p>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <i class="fa-solid fa-graduation-cap fa-3x p-4 text-light rounded-circle bg-danger" ></i>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <h3 class=" ">Special Education</h3>
+                                            <p class="fs-5 text-secondary">our college  gives you special eduaction so you can achieve what you want</p>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <i class="fa-solid fa-football fa-3x p-4 text-light rounded-circle bg-danger"></i>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <h3 class="">Sports Facilities</h3>
+                                            <p class="fs-5 text-secondary">Our college provide sports facilities also it include football ground and gym</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-5 " data-aos="fade-up-right">
+                            <img src="{% static 'images/about.jpg' %}"  height="750px" width="100%">
+                        </div>
+                    </div>
+                </div>
+            </div><br><br>
+            <div class="row pt-5" data-aos="flip-up">
+                <div class="col-md-3" id="image">
+                    <img src="{% static 'images/library1.jpg' %}"   height="540px" width="120%" >
+                </div>
+                <div class="col-md-3 bg-danger" id="about1">
+                    <h3 class="fw-bold fs-1">Library management</h3>
+                    <p>Library is equipped with collection of presentation material, project reports and seminar reports prepared by students during their course work. For the benefit of poor and needy students facility of book bank is provided from where books are issued to them for the whole session.Encourage the Practice of Reading. ...
+                                Scope of Personal Development,Boosts Concentration,Teach the Power of Research,Helps Students Establish Themselves in the University Community,Allows Privacy + Creates a Sense of Calm</p>
+                </div>
+                <div class="col-md-3" id="image">
+                    <img src="{% static 'images/lab1.jpg' %}" height="540px" width="107%">
+                </div>
+                <div class="col-md-3 bg-danger text" id="about1">
+                    <h3 class="fw-bold  fs-1">Computer Lab</h3>
+                    <p>The Institute has 6 hi-tech air conditioned computer labs with 160 latest computers. Institution has also provided 150 laptops to students for their lab work. All labs are networked through structured cabling and dedicated IBM servers.
+                                Latest equipments like Multimedia Projectors, Scanners, Digital Cameras, Web Cameras etc. are provided to students.
+                                All computers are connected with Online UPS.</p>
+                </div>
+            </div>
+            <div class="row" data-aos="flip-up">
+                <div class="col-md-3 bg-danger" id="about1">
+                    <h3 class="fw-bold fs-1">Conference Hall</h3>
+                    <p>An ultra-modern conference hall has been newly constructed for guest lectures. This well-designed Conference room with state-of-the-art equipment will offer instant access to ultra-modern tools necessary for video conferencing and presentations.
+                                SSDWIT is proud to have 3 Conference Halls, equipped with Modern Multimedia Projector, Cordless Mike and latest computer having capacity to accommodate 60 students at one time. It helps in holding small conferences, seminars and informal discussions among the students. </p>
+                </div>
+                <div class="col-md-3" id="image">
+                    <img src="{% static 'images/conference1.jpg' %}" height="540px" width="103%">
+                </div>
+                <div class="col-md-3 bg-danger" id="about1">
+                    <h3 class="fw-bold fs-1">Playground</h3>
+                    <p>A playground or play area is a place designed to provide an environment for students that facilitates play, typically outdoors. The college campus has playground for organizing athletic meet. 
+                            College playground equipment in India positively impacts students's emotional, social, physical, and mental growth. Various other advantages include increased self-esteem, critical thinking skills, and a strong immune system</p>
+                </div>
+                <div class="col-md-3" id="image">
+                    <img src="{% static 'images/play.jpg' %}" height="540px" width="107%">
+                </div>
+            </div><br><br>
+            <!--about section end-->
+            <!--course section start-->
+            <div class="row"  id="courses" >
+                <div class="col-md-12 text-center">
+                    <h3 class=" display-5 pt-5 fw-bold "><span class="text-danger">POPULAR </span>COURSES</><h3>
+                    <p class= "fs-5 ">There are various Courses in our college</p>
+                    <i class="fa-solid fa-graduation-cap fa-2x"></i>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-10 offset-1">
+                    <div class="row"data-aos="fade-up"
+                    data-aos-easing="linear"
+                    data-aos-duration="700">
+                    {%for c in courses %}
+                        <div class="col-md-4 mb-5">
+                            <img src="/media/{{ c.Pic }}" width="100%" height="250px">
+                            <div class="col-md-12 p-3 border bg-white" id="course">
+                                <h2 class="fw-bold">{{c.Coursename}}</h2>
+                                <p class= "fs-4 text-secondary"  id="cour">{{c.Description}}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <!--courses section end -->
+            <!--Event section start-->
+<div class="row pt-5 " id="events">
+    <div class="col-md-12">
+        <h1 class="fw-bold text-center display-5 "><span class="text-danger">UPCOMING </span>EVENTS</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-10 offset-1">
+        <div class="row pt-5 pb-5" data-aos="zoom-in-up">
+            {% for e in events %}
+            <div class="col-md-2">
+                <div class="border1">
+                    <h1 class="text-danger display-3 fw-bold  pt-3 text-center">{{e.date|date:"M d"}}</h1>
+                </div>
+            </div>
+            <div class="col-md-5 ps-5 pt-2">
+                <h2>{{e.name}}</h2>
+                <h5>{{e.name1}}</h5>
+                <p class="text-secondary">{{e.info}}</p>
+            </div>
+            <div class="col-md-5 pb-5">
+                <img src="/media/{{e.photo}} " width="90%" height="250px" />
+            </div>
+            {% endfor %}           
+        </div>
+    </div>
+</div>
+            <!--event section end-->
+            <!--facts start-->
+<div class="row" id="backg">
+    <div class="col-md-12">
+        <div class="row ps-5">
+            <div class="col-md-12 text-center">
+                <h1 class="text-light fw-bold pt-5">IMPORTANT FACTS</h1>
+                <p class=" text-light fs-5">There are important facts about our college</p>
+                <i class="fa-solid fa-graduation-cap fa-3x text-light"></i>
+            </div>
+        </div>
+        <div class="row p-5">
+            <div class="col-md-10 offset-1">
+                <div class="row pb-5" id="fact">
+                    <div class="col-md-4">
+                        <h6 class="fw-bold text-light display-5">Teachers</h6>
+                        <h3 class="fw-bold text-light display-3"><span class="fw-bold text-light display-3 counter">24</span>+</h3>
+                    </div>
+                    <div class="col-md-4">
+                        <h6 class="fw-bold text-light display-5">Students</h6>
+                        <h3 class="fw-bold text-light display-3"><span class="fw-bold text-light display-3 counter">54</span>+</h3>  
+                    </div>
+                    <div class="col-md-4">
+                        <h6 class="fw-bold text-light display-5">Courses</h6>
+                        <h3 class="fw-bold text-light display-3"><span class="fw-bold text-light display-3 counter">5</span>+</h3>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div>
+</div>
+<!--fact section end-->
+<!--blog section start-->   
+            <div class="row  pt-5 bg-light">
+                <div class="col-md-12">
+                    <h1 class="fw-bold text-center display-5 "><span class="text-danger">RECENT </span>BLOGS</h1>
+                </div>
+            </div> 
+            <div class="row pt-5 " data-aos="fade-up"
+            data-aos-easing="linear"
+            data-aos-duration="700" id="blogg">
+                <div class="col-md-10 offset-1">
+                    <div class="row p-5">
+                        {% for b in blg %}
+                        <div class="col-md-4">
+                            <a href="/blog/{{b.id}}" class="text-decoration-none text-dark">
+                            <img src="/media/{{b.photo}}" width="100%" height="250px">
+                            <div class=" border p-2  bg-danger text-light  text-center"> 
+                                <h4>{{b.poston}}</h4>
+                            </div>
+                            <div class=" p-3 border bg-white" id="course">
+                                <h2 class="fw-bold blog">{{ b.title }}</h2>
+                                
+                            </a>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>  
+{% endblock %}          

@@ -1,0 +1,49 @@
+{% extends 'base2.html' %}
+{% load static %}
+{% block title %}registerstudents{% endblock %}
+{% block content %}
+<div class="row" id="dashbg">
+  <div class="col-md-12">
+    <div class="row" id="assign">
+        <div class="col-md-12">
+          <h2>Registered Students</h2>
+          <hr width="100%">
+        </div>
+    </div>
+    <div class="row pt-4 ps-5">
+      <div class="col-md-12">
+        <table id="example" class=" table-light table table-striped table-bordered border border-3 border-dark " style="width:100%">
+          <thead>
+            <tr>
+              <th>S No.</th>
+              <th>Full Name</th>
+              <th>Course</th>
+              <th>Sem</th>
+              <th>Mobile</th>
+              <th>E-Mail</th>
+              <th>Roll No.</th>
+              <th>Registration No</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for reg in rs %}
+            <tr>
+              <td>{{ forloop.counter }}</td>
+              <td>{{reg.First_name}} {{reg.Last_name}}</td>
+            
+              <td>{{reg.Course_id}}</td>
+              <td>{{ reg.Sem}}</td>
+              <td>{{reg.Mobile}}</td>
+              <td>{{reg.Email}}</td>
+              <td>{{reg.Rollno}}</td>
+              <td>{{reg.Registration_no}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+        </table>
+        
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

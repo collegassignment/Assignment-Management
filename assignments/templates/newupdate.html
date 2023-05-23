@@ -1,0 +1,108 @@
+{% extends 'base3.html' %}
+{% load static %}
+{% block title %}newupdate{% endblock %}
+{% block content %}
+
+
+
+<div class="row" id="dashbg">
+    <div class="col-md-12">
+        <div class="row" id="assign">
+            <div class="col-md-10">
+                <h2>Update Assignment</h2>
+                <hr width="120%" >
+            </div>
+        </div>
+        <div class="row pt-5 ps-5">
+            <div class="col-md-12">
+                <table class="table table-light">
+                    <thead>
+       
+                    </thead>
+                    <tbody>
+                        <tr class="table-active">
+                        <td colspan="3" class="table-active fw-bold">Assignment Number: {{n.Assignment_Number}}</td>
+                        <td class="fw-bold"> Marks: {{n.Assignment_Marks}}</td>
+                        </tr>
+                        <tr>
+                            <th>Course</th>
+                            <td>{{n.Course_id}}</td>
+                            <th>Subject Name</th>
+                            <td>{{n.Subject_id}}</td>
+                        </tr>
+                        <tr class="table-active">
+                            <th class="table-active">Subject Code</th>
+                            <td>{{n.Subject_id.Subjectcode}}</td>
+                            <th>Assignment Title</th>
+                            <td>{{n.Assignment_Title}}</td>
+                        </tr>
+                        <tr>
+                            <th>Asignment Description</th>
+                            <td>{{n.Assignment_Description}}</td>
+                            <th>Last Date of Submission</th>
+                            <td>{{n.Submission_Date}}</td>
+                        </tr>
+                        <tr class="table-active">
+                            <th class="table-active">View assignment paper</th>
+                            <td colspan="3"><a href="/media/{{ n.Assignment_File }}" target="_blank">View Assignment Paper</a></td>
+                        </tr>
+                        
+                        {% if not up %}
+                        
+                        <form action="/insertfile/" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {% if a %}
+                        <tr>
+                            <th>Assignment Description</th>
+                            <td colspan="3">
+                                <textarea rows="3" cols="150" class="form-control" name="Assignment_Description"></textarea>
+                                
+                            </td>
+                         </tr>
+                        <tr class="table-active">
+                            <th class="table-active">Upload Answer File</th>
+                            <td colspan="3">
+                    
+                            <input type="file"  class="form-control" name="Assignment_File">
+                            <input type="hidden" class="form-control" name="Student_id" value="{{ tdetail.id }}">
+                            <input type="hidden"  class="form-control" name="Assignment_id" value="{{ n.id }}">
+                            <input type="hidden"  class="form-control" name="Status" value="unchecked">
+                            <input type="hidden"  class="form-control" name="Remarks" value="none">
+                            <input type="hidden"  class="form-control" name="Marks" value="0">
+                            <input type="hidden" class="form-control" name="Submission_Date" id="date" >
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"class="text-center"><button class="btn btn-primary " onclick="sub()">Submit</button></td>
+                        </tr>
+                        {% else %}
+                        <tr>
+                            <td class="fw-bold fs-4 text-danger" colspan="4">Not able to submit</td>
+                        </tr>
+                        {% endif %}
+                    </form>
+                    {% else %}
+                    <tr>
+                        <td class="fw-bold fs-4 text-danger" colspan="4">Submitted</td>
+                    </tr>
+                     {% endif %}
+                </tbody>
+            </table>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+n =  new Date();
+y = n.getFullYear();
+m = n.getMonth() + 1;
+d = n.getDate();
+document.getElementById("date").value = m + "/" + d + "/" + y;
+</script> 
+<script>
+    function sub()
+    {
+        alert("submitted Successfully");
+    }
+</script>
+{% endblock %}

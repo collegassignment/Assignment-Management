@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}FAQ{% endblock %}
+{% block content %}
+
+<div class="row">
+  <div class="col-md-12">
+      <div class="text-center p-4 bg-danger">
+          <h2 class="text-light fw-bold">Frequently Asked Questions</h2>
+      </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-8 offset-2">
+    <div class="accordion accordion-flush mt-5 " id="accordionFlushExample">
+      {% for f in faqs %}
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-heading{{ f.id }}">
+          <button class="accordion-button collapsed bg-dark text-light" type="button" data-bs-toggle="collapse" 
+            data-bs-target="#flush-collapse{{ f.id }}" aria-expanded="false" aria-controls="flush-collapse{{ f.id }}">
+              <i class="fa fa-arrow-right me-3"></i>
+              {{ f.question }}
+        </button>
+      </h2>
+      <div id="flush-collapse{{ f.id }}" class="accordion-collapse collapse"
+        aria-labelledby="flush-heading{{ f.id }}" data-bs-parent="#accordionFlushExample">
+        <div class="accordion-body">{{ f.answer }}</div>
+      </div>
+     </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+<div class="row pt-5 pb-5">
+  <span class="border-bottom"></span>
+</div>
+
+
+{% endblock %}
+

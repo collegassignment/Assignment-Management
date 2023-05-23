@@ -1,0 +1,173 @@
+{% load static %}
+<html>
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+        <link href="{% static 'style.css' %}" type="text/css" rel="stylesheet" />
+        <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
+        <link href="{% static 'css/bootstrap-grid.min.css' %}" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link href="{% static 'aos-master/dist/aos.css' %}" rel="stylesheet" />
+        <script src="{% static 'aos-master/dist/aos.js' %}"></script>
+        <script src="{% static 'jquery.js' %}"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+       
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                AOS.init();
+            });
+        </script>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row p-2 bg-danger">
+                <div class="col-md-9 text-light ps-5">
+                    <p class="fs-5 ps-5 pt-3">Have any query?<i class="fa-solid fa-mobile"></i> +918907654323</p>
+                </div>
+                <div class="col-md-3">
+                    <p class="text-light fs-5 pt-3"><a href="https://mail.google.com/mail/?view=cm&fs=1&to=educat085@gmail.com" target="_blank" class="text-light nav-link"><i class="fa-solid fa-envelope "></i>educat085@gmail.com</a></p> 
+                </div>
+            </div>
+            <div class="row sticky-top bg-white">
+                <div class="col-md-10 offset-1">
+                    <div class="row ">
+                        <div class="col-md-1 ps-5 pt-4">
+                            <i class="fa-solid fa-graduation-cap fa-3x pt-3"></i> 
+                        </div>
+                        <div class="col-md-1 p-5 ps-0 display-4">
+                            <h3 class="fw-bold ps-2" >EDU<span class="text-danger">CAT</span></h3>
+                        </div>
+                        <div class="col-md-10" data-aos="flip-up" >
+                            
+                            <nav>
+                                <ul class="nav" id="nav1">                         
+                                    <li><a href="/home/" class="nav-link">Home</a></li>
+                                    <li><a href="/home/#aboutus" class="nav-link">About</a></li>
+                                    <li><a href="/home/#courses" class="nav-link">Courses</a></li>
+                                    <li><a href="/home/#events" class="nav-link">Events</a></li>
+                                    <li><a href="/home/#blogg" class="nav-link">Blogs</a></li>
+                                    <li><a href="/contact/" class="nav-link">Contact</a></li>
+                                    <li><a href="/faq/" class="nav-link">FAQ</a></li>
+                                    <div class="dropdown">
+                                        <button class="btn fw-bold pt-2 fs-5 dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="btnmenu">
+                                         My Account
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="/dashboard/">Teacher_Login</a></li>
+                                            <li><a class="dropdown-item" href="/signup/">Student_Login</a></li>
+                                          <li><a class="dropdown-item" href="/signup/">Student_Signup</a></li>
+                                          <!-- <li><a class="dropdown-item" href="/logout/">Logout</a></li> -->
+                                        </ul>
+                                      </div>
+                                </ul>
+                            </nav> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            {% block content %}
+
+            {% endblock %}
+
+            <!--footer section start-->   
+            <div class="row" id="backg1" data-aos="fade-up"
+            data-aos-easing="linear"
+            data-aos-duration="700">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-7 text-center  text-light display-1 " id="footer">
+                            <h1 class="pt-4 fw-bold">SUBSCRIBE </h1> 
+                            <h1 class="fw-bold"> TO OUR NEWSLETTER </h1>
+                        </div> 
+                        <div class="col-md-5 pt-5"> 
+                            <form action="/insertsubscribe/" method="post">
+                                {% csrf_token %}
+                                <div class="subscribe-form">
+                                
+                                    <input type="email"  name="email"class="form-control-lg"  placeholder="Enter your email address" required/>
+                                    <input type="hidden" name="current_datetime" />
+                                    <button class="btn btn-danger btn-lg">Subscribe</button>
+                                </div>
+                            </form>
+                        </div> 
+                    </div> 
+                    <div class="row">
+                        <div class="col-md-10 offset-1">
+                            <div class="row">
+                                <div class="col-md-3 p-5">
+                                    <h5 class="fw-bold fs-1  text-light"><span class="text-danger fw-bold">About</span> Us</h5>
+                                    <p class="text-light">college give you training so students can accept challenges  posted by the industry and also improve the decision making and communication skills.</p>
+                                </div>
+                                <div class="col-md-3 p-5 ">
+                                    <h5 class="fw-bold fs-1  text-light"><span class="text-danger fw-bold"> Quick</span> Links</h5>
+                                    <nav>
+                                        <ul class="ps-0" id="menu">
+                                            <li><a href="/home/" class="nav-link"><i class="fa-solid fa-house"></i> Home</a></li>
+                                            <li><a href="/home/#aboutus" class="nav-link"> <i class="fa-solid fa-graduation-cap " ></i> About</a></li>
+                                            <li><a href="/home/#courses" class="nav-link"><i class="fa-sharp fa-solid fa-book"></i> Courses</a></li>
+                                            <li><a href="/home/#events" class="nav-link"><i class="fa-regular fa-calendar-days"></i> Event</a></li>
+                                            <li><a href="/home#blogg" class="nav-link"><i class="fa-regular fa-pen-to-square"></i> Blogs</a></li>
+                                            <li><a href="/contact/" class="nav-link"><i class="fa fa-address-card"></i> Contact</a></li>
+                                        </ul>
+                                    </nav> 
+                                </div>
+                                <div class="col-md-3 pt-5 ps-0">
+                                    <h5 class="fw-bold fs-1 text-light"><span class="text-danger fw-bold"> Extra</span> Links</h5>
+                                    <nav>
+                                        <ul class="ps-0" id="menu">
+                                            <li><a href="/signup/" class="nav-link"><i class="fa-solid fa-book-open-reader fa-1x"></i> Student</a></li>
+                                            <li><a href="/dashboard/" class="nav-link"><i class="fa-sharp fa-solid fa-person-chalkboard fa-1x" ></i> Teacher</a></li>
+                                            <li><a href="/faq/" class="nav-link"><i class="fa-solid fa-1x fa-question"></i> FAQ</a></li>
+                                        </ul>
+                                    </nav>  
+                                </div>
+                                <div class="col-md-3 pt-5">
+                                    <h5 class="fw-bold fs-1  text-light"><span class="text-danger fw-bold">Contact</span> Info</h5>
+                                    <div class="text-light fs-5">  
+                                        <p><i class="fa fa-mobile"></i> 6257891289</p>
+                                        <p id="icon"> <a href="https://mail.google.com/mail/?view=cm&fs=1&to=educat085@gmail.com" target="_blank" class="text-light nav-link"><i class="fa-solid fa-envelope "></i> educat085@gmail.com</a></p>
+                                        <p><i class="fa-solid fa-location-dot"></i> Bathinda punjab,india</p>
+                                    </div>
+                                </div>
+                            </div>  
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </body>
+
+<script>
+$(document).ready(function(){
+
+
+var typed = new Typed('.element', {
+strings: ["<span class='text-danger'>Character Is</span> A Wish For A Perfect Education ", "<span class='text-danger'>Beter Education</span> For Better World", "<span class='text-danger'>Education is a </span>journey not a race"],
+typespeed:2,
+loop:true
+});
+AOS.init();
+});
+$(document).ready(function() {
+
+$('.counter').each(function () {
+$(this).prop('Counter',0).animate({
+Counter: $(this).text()
+}, {
+duration: 4000,
+easing: 'swing',
+step: function (now) {
+$(this).text(Math.ceil(now));
+}
+});
+});
+
+});  
+
+</script>
+</html>

@@ -1,0 +1,51 @@
+{% extends 'base3.html' %}
+{% load static %}
+{% block title %}Uploaded assignment{% endblock %}
+{% block content %}
+<div class="row" id="dashbg">
+  <div class="col-md-12">
+    <div class="row" id="assign">
+        <div class="col-md-12">
+          <h2>New Assignment</h2>
+          <hr width="100%">
+        </div>
+    </div>
+    <div class="row pt-2 ps-5">
+      <div class="col-md-12">
+        
+        <table id="example" class="table  table-light table-striped table-bordered border border-3 border-dark " style="width:100%">
+          <thead>
+            <tr >
+              <th>S No.</th>
+              <th>Assignment Number</th>
+              <th>Course Name</th>
+              <th>Subject</th>
+              <th>Assignment By</th>
+              <th>Date of Submission</th>
+              <th>Action</th>
+            </tr>
+            <tbody>
+              {% for n in assignments %}
+              <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{n.Assignment_Number}}</td>
+                <td>{{n.Course_id}}</td>
+                <td>{{n.Subject_id}}</td>
+                <td>{{n.Teacherprofile_id}}</td>
+                <td>{{n.Submission_Date}}</td>
+                <td>
+                  
+                
+                    <a href="/newupdate/{{ n.id }}/{{ tdetail.id }}">
+                      <button class="btn btn-primary">View</button>
+                    </a>
+                  
+                </td>
+              </tr>
+              {% endfor %}
+            </thead>
+          </tbody>
+        </table>
+  </div>
+</div>
+{% endblock %}

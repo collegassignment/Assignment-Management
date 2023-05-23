@@ -1,0 +1,25 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: Password reset on 127.0.0.1:8000
+From: webmaster@localhost
+To: bnslguddu27@gmail.com
+Date: Mon, 01 May 2023 06:14:02 -0000
+Message-ID: <168292164224.9996.4459150100380299715@DESKTOP-8MIM2SP>
+
+
+You're receiving this email because you requested a password reset for your user account at 127.0.0.1:8000.
+
+Please go to the following page and choose a new password:
+
+http://127.0.0.1:8000/accounts/reset/MTc/bnir9e-d278746f9842d8f7ade394288cc10146/
+
+Your username, in case you’ve forgotten: rashmi
+
+Thanks for using our site!
+
+The 127.0.0.1:8000 team
+
+
+
+-------------------------------------------------------------------------------

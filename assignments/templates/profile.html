@@ -1,0 +1,49 @@
+{% extends 'base2.html' %}
+{% load static %}
+{% block title %}Profile{% endblock %}
+{% block content %}
+<div class="row" id="dashbg">
+    <div class="col-md-12 pt-5 ps-5">
+        <h2 class="ps-5">Profile</h2>
+        <hr width="100%">
+        <table class="table ps-5">
+            <thead>
+                <tr>
+                    <th>Profile Pic</th>
+                    <td><img src='/media/{{tdetail.Photo}}'  class="rounded-circle"width="100px"></td> 
+                </tr>
+                <tr>
+                    <th>Name</th>
+                    <td>{{tdetail.Name}}</td> 
+                </tr>
+                <tr>
+                    <th>Gender</th>
+                    <td>{{tdetail.Gender}}</td> 
+                </tr>
+                <tr>
+                    <th>Contact</th>
+                    <td>{{tdetail.Contact}}</td> 
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <td>{{tdetail.Email}}</td> 
+                </tr>
+                <tr>
+                    <th>Course id</th>
+                    <td>{{tdetail.Course_id}}</td> 
+                </tr>
+                <tr>
+                    <th>Address</th>
+                    <td>{{tdetail.Address}}</td> 
+                </tr>
+                <tr>
+                    <th>Date of Joining</th>
+                    <td>{{tdetail.Dateofjoin}}</td> 
+               
+                        
+                       
+            </thead>
+        </table>
+    </div>
+</div>
+{% endblock %}

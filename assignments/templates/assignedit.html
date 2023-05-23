@@ -1,0 +1,134 @@
+{% extends 'base3.html' %}
+{% load static %}
+{% block title %}stuassignment edit{% endblock %}
+{% block content %}
+
+<div class="row" id="dashbg">
+    <div class="col-md-12">
+<div class="row" id="assign">
+    <div class="col-md-10">
+      <h2>Update Assignment</h2>
+      <hr width="120%" >
+    </div>
+</div>
+
+<div class="row pt-5 ps-5">
+  <div class="col-md-12">
+    
+    
+      
+    <table class="table table-light">
+      <thead>
+       
+      </thead>
+      <tbody>
+        <tr class="table-active">
+            <td colspan="3" class="table-active fw-bold">Assignment Number: {{upload.Assignment_id.Assignment_Number}}</td>
+            <td class="fw-bold"> Marks: {{upload.Assignment_id.Assignment_Marks}}</td>
+        </tr>
+        <tr>
+            <th>Course</th>
+            <td>{{upload.Assignment_id.Course_id}}</td>
+            <th>Subject Name</th>
+            <td>{{upload.Assignment_id.Subject_id}}</td>
+        </tr>
+        <tr class="table-active">
+            <th class="table-active">Subject Code</th>
+            <td>{{upload.Assignment_id.Subject_id.Subjectcode}}</td>
+            <th>Assignment Title</th>
+            <td>{{upload.Assignment_id.Assignment_Title}}</td>
+        </tr>
+        <tr>
+            <th>Asignment Description</th>
+            <td>{{upload.Assignment_id.Assignment_Description}}</td>
+            <th>Last Date of Submission</th>
+            <td>{{upload.Assignment_id.Submission_Date}}</td>
+        </tr>
+        <tr class="table-active">
+            <th class="table-active">View assignment paper</th>
+            <td colspan="3"><a href="/media/{{ upload.Assignment_id.Assignment_File }}" target="_blank">View Assignment Paper</a></td>
+        </tr>
+        {% if data %}
+        <form action="/updatestuassign/{{ upload.id }}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+        <tr>
+            <th>Assignment Description</th>
+            <td colspan="3">
+                <input type="text" class="form-control" name="Assignment_Description" value="{{ upload.Assignment_Description  }}">
+                 
+           </td>
+        </tr>
+        <tr class="table-active">
+            <th class="table-active">Upload Answer File</th>
+            <td colspan="3">
+              
+                    <input type="file"  class="form-control" name="Assignment_File" value="{{upload.Assignment_File}}">
+                    <input type="hidden" class="form-control" name="Student_id" value="{{ tdetail.id }}">
+                    <input type="hidden"  class="form-control" name="Assignment_id" value="{{ upload.Assignment_id_id }}">
+                    <input type="hidden"  class="form-control" name="Status" value="unchecked">
+                    <input type="hidden"  class="form-control" name="Remarks" value="none">
+                    <input type="hidden"  class="form-control" name="Marks" value="0">
+                    <input type="hidden" class="form-control" name="Submission_Date" id="date" >
+         <tr>
+            <tr>
+            
+                <td colspan="4"class="text-center"><button class="btn btn-primary " onclick="sub()">update</button></td>
+            </tr>
+        </form>
+            <!-- <th>Assignment Description</th>
+            <td colspan="3">
+                <textarea rows="3" cols="150" class="form-control" name="Assignment_Description" value="{{ upload.Assignment_Decription  }}"></textarea>
+                 
+           </td>
+        </tr>
+        <tr class="table-active">
+            <th class="table-active">Upload Answer File</th>
+            <td colspan="3">
+              
+                    <input type="file"  class="form-control" name="Assignment_File" value="{{upload.Assignment_File}}">
+                    <input type="hidden" class="form-control" name="Student_id" value="{{ tdetail.id }}">
+                    <input type="hidden"  class="form-control" name="Assignment_id" value="{{ .id }}">
+                    <input type="hidden"  class="form-control" name="Status" value="unchecked">
+                    <input type="hidden"  class="form-control" name="Remarks" value="none">
+                    <input type="hidden"  class="form-control" name="Marks" value="0">
+                    <input type="hidden" class="form-control" name="Submission_Date" id="date" >
+                    
+                
+            </td>
+        </tr>
+      
+        <tr>
+            
+            <td colspan="4"class="text-center"><button class="btn btn-primary " onclick="sub()">update</button></td>
+        </tr> -->
+        {% else %}
+        <tr>
+           <td class="fw-bold fs-4 text-danger" colspan="4">Not able to edit</td>
+        </tr>
+        {% endif %}
+    
+    </tbody>
+
+    </table>
+    
+
+
+
+  </div>
+</div>
+</div>
+</div>
+<script>
+n =  new Date();
+y = n.getFullYear();
+m = n.getMonth() + 1;
+d = n.getDate();
+document.getElementById("date").value = m + "/" + d + "/" + y;
+</script> 
+<script>
+    function sub()
+    {
+        alert("assignment updated  Successfully");
+    }
+</script>
+{% endblock %}

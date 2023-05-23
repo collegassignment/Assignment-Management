@@ -1,0 +1,30 @@
+{% extends 'base2.html' %}
+{% load static %}
+{% block title %}unchecked{% endblock %}
+{% block content %}
+<div class="row" id="dashbg">
+    <div class="col-md-12">
+        <div class="row" id="assign">
+            <div class="col-md-12">
+                <h2>Unchecked Assignments</h2>
+                <hr width="100%">
+                <form class="fw-bold pt-4" method="post" action="/getassignment/{{ tdetail.id }}">
+                    {% csrf_token %}
+                    <label class="fw-bold fs-4">Subject</label>
+                    <div class="ps-3">
+                    <select class="form-control form-control-lg" id="forms" name="Subject_id" >
+                        {% for s in subjects %}
+                        <option value="{{ s.id }}">{{ s.Subjectname}}</option>
+                        {% endfor %}
+                    </select>
+            </div>
+            <div class="pt-3">
+                <button type="submit" class="btn btn-danger">Submit</button>
+           </div>
+        </form>
+        </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+  

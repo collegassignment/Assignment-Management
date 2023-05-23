@@ -1,0 +1,123 @@
+{% load static %}
+<html>
+    <head>
+        <title>login page</title>
+        <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
+        <link href="{% static 'css/bootstrap-grid.min.css' %}" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link href="{% static 'aos-master/dist/aos.css' %}" rel="stylesheet" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.min.js"></script>
+        <script src="{% static 'aos-master/dist/aos.js' %}"></script>
+        <link href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+        <link href="{% static 'dashboardstyle.css' %}" type="text/css" rel="stylesheet" />
+    </head>
+    <body id="bodystudent">
+
+<div class="cotn_principal">
+    <div class="cont_centrar">
+      <div class="cont_login">
+        <div class="cont_info_log_sign_up">
+          <div class="col_md_login">
+            <div class="cont_ba_opcitiy">
+              <h2>LOGIN</h2>  
+              <p>Student Login</p> 
+              <button class="btn_login" onclick="cambiar_login()">LOGIN</button>
+            </div>
+          </div>
+          <div class="col_md_sign_up">
+            <div class="cont_ba_opcitiy">
+              <h2>SIGN UP</h2>
+              <p>Student Signup</p>
+              <button class="btn_sign_up" onclick="cambiar_sign_up()">SIGN UP</button>
+           </div>
+          </div>
+        </div>
+        <div class="cont_back_info">
+          <div class="cont_img_back_grey">
+            <img src="{% static 'images/studentsign.png' %}" alt="" />
+          </div> 
+        </div>
+        <div class="cont_forms" >
+          <div class="cont_img_back_">
+            <img src="{% static 'images/studentsign.png' %}" alt="" />
+          </div>
+          <div class="cont_form_login">
+            <a href="#" onclick="ocultar_login_sign_up()" >
+            <i class="material-icons">&#xE5C4;</i></a>
+            <form method="post" action="/loginstudent/" >
+              <h2>LOGIN</h2>
+              {% csrf_token %}
+              {{ form.username }}
+              {{ form.password1 }}
+              <a href="/accounts/password_reset/">Forget Password</a>
+            <button class="btn_login" onclick="cambiar_login()">LOGIN</button>
+          </form>
+          </div> 
+          <div class="cont_form_sign_up">
+            <a href="#" onclick="ocultar_login_sign_up()"><i class="material-icons">&#xE5C4;</i></a>
+            <form method="post">
+            <h2>SIGN UP</h2>
+            {% csrf_token %}
+            {% for field in form %}
+            {{field}}
+            {% for error in field.errors %}
+            <p class="text-danger">{{error}}</p>
+            {% endfor %}
+            {% endfor %}
+            <button class="btn_sign_up" onclick="cambiar_sign_up()">SIGN UP</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    </body>
+    <script>
+        function cambiar_login() {
+          document.querySelector('.cont_forms').className = "cont_forms cont_forms_active_login";  
+          document.querySelector('.cont_form_login').style.display = "block";
+          document.querySelector('.cont_form_sign_up').style.opacity = "0";               
+          
+          setTimeout(function(){  document.querySelector('.cont_form_login').style.opacity = "1"; },400);  
+            
+          setTimeout(function(){    
+          document.querySelector('.cont_form_sign_up').style.display = "none";
+          },200);  
+            }
+          
+          function cambiar_sign_up(at) {
+            document.querySelector('.cont_forms').className = "cont_forms cont_forms_active_sign_up";
+            document.querySelector('.cont_form_sign_up').style.display = "block";
+          document.querySelector('.cont_form_login').style.opacity = "0";
+            
+          setTimeout(function(){  document.querySelector('.cont_form_sign_up').style.opacity = "1";
+          },100);  
+          
+          setTimeout(function(){   document.querySelector('.cont_form_login').style.display = "none";
+          },400);  
+          
+          
+          }    
+          
+          
+          
+          function ocultar_login_sign_up() {
+          
+          document.querySelector('.cont_forms').className = "cont_forms";  
+          document.querySelector('.cont_form_sign_up').style.opacity = "0";               
+          document.querySelector('.cont_form_login').style.opacity = "0"; 
+          
+          setTimeout(function(){
+          document.querySelector('.cont_form_sign_up').style.display = "none";
+          document.querySelector('.cont_form_login').style.display = "none";
+          },500);  
+            
+            }
+          
+    </script>
+    </html>

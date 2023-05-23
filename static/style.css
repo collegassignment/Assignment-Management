@@ -1,0 +1,241 @@
+
+
+
+#bg{
+   background:url('images/bgpic7.jpg');
+   background-size: cover;
+    min-height: 70%;
+    min-width:100%;
+  
+   
+   
+}
+#bg>.col-md-12{
+    background:rgba(0,0,0,0.7);
+}
+#text{
+    padding-top:10%;
+}
+/* #btn{
+    color: white;
+    background:#2d3e50;
+} */
+#btn:hover{
+    background:#d9534f;
+}
+#nav1{
+    padding-top: 4%;
+    margin-left:140px;
+}
+#nav1 a{
+
+    color:black;
+    font-size: 20px;
+    font-weight: bold;
+    word-spacing: 30px;
+}
+#nav1 a:hover{
+    color: #d9534f;
+}
+
+#background{
+    background: #d9534f;
+    border-radius: 10px;
+    height:100px;
+    margin-left: 650px;
+    margin-right: 650px; 
+    margin-top: -60px;
+    
+}
+#btn1{
+    color: white;
+    background:#2d3e50;
+}
+#heading1{
+    font-family: 'Fredericka the Great', cursive;
+}
+#about{
+    background: #2d3e50;
+    font-family: 'Fredericka the Great', cursive;
+    
+}
+#about1{
+    /* background: #d9534f; */
+    font-size: 20px;
+    color: white;
+    font-family: 'Fredericka the Great';
+}
+
+
+
+#para1{
+    font-family: 'Fredericka the Great';
+   
+}
+#para{
+    font-family: 'Fredericka the Great';
+   
+}
+#course{
+    font-family: 'Fredericka the Great';
+}
+#course1{
+    margin-left: 200px;
+}
+.border1{
+    border:solid  #d9534f;
+    height:180px;
+    width:170px;
+     
+}
+ #backg{
+    
+    background:url('images/fact.jpg');
+    background-size: cover;
+    margin-top: 100px;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 70%;
+    min-width: 100%;
+    
+      
+ } 
+ #backg>.col-md-12{
+   
+     background:rgba(0,0,0, 0.5);
+      
+     
+ }
+ #fact{
+    margin-top:100px;
+ }
+ #backg1{
+    background:url('images/foot2.jpg');
+    background-size:cover;
+    margin-top:100px;
+    min-width: 100%;
+   
+ }
+#backg1>.col-md-12{
+    
+    background:rgba(0,0,0, 0.7);
+ }
+ #footer{
+    
+        border-bottom: 180px solid #d9534f;
+        border-left: 0px solid transparent;
+        border-right: 100px solid transparent;
+        height: 120px;
+        width: 800px;
+    
+ }
+
+
+.subscribe-form {
+    float: center;
+    height: 56px;
+    position: relative;
+    width: 525px;
+}
+.subscribe-form:before {
+    border-color: #fff #fff transparent transparent;
+    -o-border-image: none;
+    border-image: none;
+    border-style: solid;
+    border-width: 28px 15px;
+    content: "";
+    height: 5px;
+    left: -30px;
+    position: absolute;
+    top: 0;
+    width: 0;
+ }
+
+.subscribe-form input{
+    background: #fff !important;
+    border-radius:0px;
+    padding: 11px;
+    border:1px solid #fff;
+    width:480px;
+}
+.subscribe-form button{
+    height:56px;
+    border-radius: 0px;
+    border:1px solid #d9534f;
+    margin-left:400px;
+    margin-top:-55px;
+}
+#menu a{
+    color:white;
+    font-size:22px;
+
+ }
+#menu a:hover{
+    color:#d9534f;
+}
+/*contact page*/
+ #backg2{
+    background:url('images/graduation.png');
+    background-size: cover;
+   min-width: 100%;
+   min-height: 60%;
+ }
+ #backg2>.col-md-12{
+    background: rgba(0,0,0, 0.7);
+ }
+ #contactform{
+    padding-top: 150px;
+ }
+ #contacttxt{
+    margin-top: 200px;
+    font-family: 'Fredericka the Great';
+ }
+ #contact{
+    width:60%;
+    
+ }
+ #contact1{
+    width:60%;
+    margin-top:20px;
+ }
+ #contact2{
+    width:60%;
+    margin-top:25px;
+ }
+ #btns{
+    margin-top:20px;
+    text-align:left;
+ }
+
+ #contact3{
+    background: white;
+    margin-left:-210px;
+    margin-top: 45px;
+ }
+#map{
+    
+    margin-left: -10px;
+}
+
+#btnmenu{
+    overflow: hidden;
+}
+.blog{
+    font-family: 'Fredericka the Great';
+    min-height:120px;
+}
+#icon{
+    margin-left:-18px;
+}
+#image{
+    margin-left:-11px;
+}
+.text{
+   margin-left:15px;
+}
+#cour{
+ min-height: 220px;
+}
+#edu{
+    margin-left:-15px;
+}

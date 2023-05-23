@@ -1,0 +1,56 @@
+{% extends 'base2.html' %}
+{% load static %}
+{% block title %}Uploaded assignment{% endblock %}
+{% block content %}
+<div class="row" id="dashbg">
+  <div class="col-md-12">
+    <div class="row" id="assign">
+        <div class="col-md-12">
+          <h2>Fetch  Assignment</h2>
+          <hr width="100%">
+        </div>
+    </div>
+    <div class="row pt-5 ps-5">
+      <div class="col-md-12">
+        <table id="example" class="table table-striped  table-light table-bordered border border-3 border-dark " style="width:100%">
+          <thead>
+       
+            <tr>
+                <th>S No.</th>
+                <th>Assignment Number</th>
+                <th>Course Name</th>
+                <th>Subject</th>
+                <th>Assignment Title</th>
+                <th>Submitted By</th>
+                <th>Submitted Date</th>
+                <!-- <th>Action</th> -->
+            </tr>
+        </thead>
+            <tbody>
+              {% for assign in a %}
+              
+                <tr>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{assign.Assignment_id.Assignment_Number}}</td>
+                    <td>{{assign.Assignment_id.Course_id}}</td>
+                    <td>{{assign.Assignment_id.Subject_id}}</td>
+                    <td>{{assign.Assignment_id.Assignment_Title}}</td>
+                    <td>{{assign.Student_id.First_name}} {{assign.Student_id.Last_name}}</td>
+               
+                <td>{{assign.Submission_Date}}</td>
+                <!-- <td>
+                    <a href="#">
+                      <button class="btn btn-danger">View</button>
+                    </a> -->
+                  </td>
+               
+                {% endfor %}
+               
+               
+              </tr>
+          
+          </tbody>
+        </table>
+  </div>
+</div>
+{% endblock %}

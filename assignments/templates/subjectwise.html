@@ -1,0 +1,43 @@
+{% extends 'base2.html' %}
+{% load static %}
+{% block title %}announcement{% endblock %}
+{% block content %}
+<div class="row" id="dashbg">
+    <div class="col-md-12">
+        <div class="row ps-4" id="assign">
+            <div class="col-md-12">
+            <h2>SubjectWise Report</h2>
+            <hr width="100%" id="hrl">
+            <h4 class="fw-bold ps-5">Between Dates Report of uploaded Assignment</h4>
+            <form class=" fw-bold" action="/getassign/" method="post">
+                {% csrf_token %}
+                <div class="ps-5">
+                    <label>From Date</label>
+                    <input type="date" name="fromdate" class="form-control " id="date"></input>
+                    <label class="pt-3">To Date</label>
+                    <input type="date"  name="todate" class="form-control" id="date"></input>
+                </div>
+                <label class="pt-3 ps-5">Select Subject</label>
+               <div class="ps-5">
+                <select class="form-control form-control " id="forms" name="Subject_id" >
+                    {% for s in subjects %}
+                    <option value="{{ s.id }}">{{ s.Subjectname}}</option>
+                    {% endfor %}
+                </select>
+                </div>
+                <div class="pt-5 ps-5">
+                    <button type="submit" class="btn btn-danger">Submit</button>
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    n =  new Date();
+    y = n.getFullYear();
+    m = n.getMonth() + 1;
+    d = n.getDate();
+    document.getElementById("date").value = m + "/" + d + "/" + y;
+    </script> 
+{% endblock %}

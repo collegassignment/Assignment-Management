@@ -1,0 +1,62 @@
+
+{% load static %}
+
+<html>
+    <head>
+        
+        <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
+        <link href="{% static 'css/bootstrap-grid.min.css' %}" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link href="{% static 'aos-master/dist/aos.css' %}" rel="stylesheet" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.min.js"></script>
+        <script src="{% static 'aos-master/dist/aos.js' %}"></script>
+        <link href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" rel="stylesheet" />
+    </head>
+    <body class="bg-light">
+        <div class="container pt-5">
+            <div class="row ps-5 pt-5">
+                <div class="col-md-8 offset-2 ">
+                    <form action='/insertprofile/' method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="Student_id" value="{{ user.id }}" /> 
+                        <label class="fw-bold fs-5">First Name<span class="text-danger">*</span></label>
+                        <input type="text" name="First_name"  value="{{ user.first_name }}" class="form-control" pattern="[A-Za-z]*" required/>
+                        <label class="fw-bold fs-5">Last Name<span class="text-danger">*</span></label>
+                        <input type="text" name="Last_name"  value="{{ user.last_name }}" class="form-control" pattern="[A-Za-z]*" required/>
+                        
+                        <label class="fw-bold fs-5">Email<span class="text-danger">*</span></label>
+                        <input type="email" name="Email"  value="{{ user.email }}" class="form-control" required/>
+                        <label class="fw-bold fs-5">Mobile</label>
+                        <div class="input-group">
+                            <span class="input-group-text">+91</span>
+                            <input type="tel" class="form-control" name="Mobile" maxlength="10" pattern="[6|7|8|9][0-9]{9}*" required />
+                        </div>
+                        <label class="fw-bold fs-5 ">Course</label>
+                        <select class="form-control form-control" name="Course_id" required >
+                            {% for c in c %} 
+                            <option value="{{ c.id }}" >{{ c.Coursename }}</option>
+                            {% endfor %}    
+                        </select>
+                    
+                        <label class="fw-bold fs-5">Sem</label>
+                        
+                        <select class="form-control" name="Sem">
+                        {% for i in '123456'|make_list %}
+                        <option>{{ forloop.counter }}</option>
+                        {% endfor %}
+                        </select> 
+                        <label class="fw-bold fs-5">Rollno</label>
+                        <input type="text" class="form-control" name="Rollno">
+                        <label class="fw-bold fs-5">Registration no.</label>
+                        <input type="text" class="form-control" name="Registration_no">
+                        <div class="pt-4 ">
+                        <button class="btn btn-danger">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
